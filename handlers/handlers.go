@@ -8,7 +8,7 @@ import (
 )
 
 func HandleReq() {
-	log.Println("Start development server localhost:8000")
+	log.Println("Start development server localhost:5006")
 
 	myRouter := mux.NewRouter().StrictSlash(true)
 
@@ -18,5 +18,5 @@ func HandleReq() {
 	myRouter.HandleFunc("/users", GetUsers).Methods("OPTIONS", "GET")
 	myRouter.HandleFunc("/user/{id}", GetUser).Methods("OPTIONS", "GET")
 
-	log.Fatal(http.ListenAndServe(":8000", myRouter))
+	log.Fatal(http.ListenAndServe(":5006", myRouter))
 }
